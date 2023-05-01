@@ -1,0 +1,191 @@
+/* FLEX BOX PROPERTIES AND VALUES:
+/* display: flex;  */
+  /* flex-direction: row; */
+  /* justify-content: center; */
+  /* align-content */
+  /* align-items: center; */
+  /* order: 3; */
+  /* align-self: */
+  /* flex-wrap: wrap;*/
+  /* flex-flow: column wrap; */ 
+
+  /* icon color: #9b0000 */
+
+/* SAMPLE GRID CODE */
+  /* #garden {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+  }
+  
+  #water {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-column-end: -2; <starts from right>
+  grid-column-end: span 2;
+  grid-column-start: span 3; <sets item's width relative to the end position>
+  grid-column: 2 / 4; <accept both values at once, separated by a slash>
+  grid-column: 2 / span 3;
+  grid-row-start: 3; <vertical axis>
+  grid-row: 3 / 6;
+  grid-row: 1 / s;
+  grid-column: 2 / s;
+  grid-area: 1 / 1 / 3 / 6; <used for area>
+} */
+
+:root {
+  scroll-behavior: smooth;
+  font-family: 'Josefin Sans', sans-serif;
+  /* font-size: 36px; */
+  /* font-family: 'Open Sans', sans-serif; */
+}
+
+html,body {
+  font-size: 18px;
+}
+
+#header {
+display: flex;
+margin-top: 1rem;
+}
+
+.about,
+.services,
+#questions,
+#testimonials {
+  margin: 1em
+  
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+nav > ul > li {
+  display: inline-block;
+  padding: 0.5rem 0.5rem;
+  
+}
+
+.services {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  /* TEMP BORDER */
+  /* border: 1px solid; */
+
+}
+
+  .about {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* TEMP BORDER */
+    /* border: 1px solid; */
+    font-size: 17px; 
+  }
+
+.about > div > ul {
+  list-style-type: none;
+  display: inline-block;
+  padding-right: 2em;
+}
+
+#jumbotron {
+  background: url(assets/img/Circuit.jpg);  
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  
+}
+
+#jumbotron > h2 {
+  color: white;
+  text-align: center;
+}
+
+form {
+  border: solid 1px black;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 1rem;
+}
+
+form > * {
+  margin: 0.5rem;
+}
+
+form > input[type="submit"] {
+  width: 40%;
+  margin: 0.5rem;
+  margin-right: auto;
+}
+
+footer {
+  border-top: solid 1px black;
+  padding: 2rem 2rem 4rem;
+  margin: 1rem 1rem;
+}
+
+#contact-follow {
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between;
+}
+
+.pull-left {
+  display: flex;
+  flex-direction: column ;
+}
+
+@media (max-width: 549px){
+  .hidden--mobile {
+    display: none !important;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  nav > i {
+    padding: 1rem;
+    font-size: 2em;
+  }
+
+  nav > ul {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 0;
+  }
+
+  nav > ul > li {
+    padding: 0.5rem;
+    list-style-type: none;
+  }
+}
+
+@media (min-width: 550px) {
+  nav > ul {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 0;
+  }
+
+  nav > .fa-bars {
+    display: none;
+  }
+}
