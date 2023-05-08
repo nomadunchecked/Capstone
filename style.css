@@ -78,11 +78,46 @@ margin-top: 1rem;
   padding: 0 0 0 0;
 }
 
-/* .one {
-  display: flex;
+
+/* .testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, minmax(auto, auto));
+  grid-gap: 1em;
+  margin: 1em 5em;
   
 } */
 
+#testimonials {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1em 5em;
+}
+
+#about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1em 5em;
+}
+
+#platforms {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#platforms > ul {
+  list-style-type: none;
+  font-size: 1.2em;
+  margin: 0 0 1em -1.3em;
+}
+
+/* <h2>WHAT WE TEST</h2> */
+#platforms > h2 {
+  margin: -0.5em 0 0 0
+}
 
 .header {
   display: flex;
@@ -107,7 +142,11 @@ nav > ul > li {
     display: flex;
     flex-direction: column;
     text-align: center;
-    font-size: 17px; 
+
+  }
+content-text-holder
+  .about > h2 {
+    font-size: 1.5em;
   }
 
 .about > div > ul {
@@ -157,7 +196,7 @@ form > input[type="submit"] {
 footer {
   border-top: solid 1px black;
   padding: 2rem;
-  background-image: url(./assets/img/footerBackground.png);
+  background-image: url(./assets/img/footerBackground1.png);
   height: 10vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -176,14 +215,13 @@ footer > .two {
 
 footer > .three {
   color: black;
-  padding: 3em 0em 0em 2em;
+  padding: 1em 0em 0em 2em;
   text-align: center;
 
 }
 
 footer > .three > a {
   color: black;
-  padding-left: 1.15em;
 }
 
 footer > .four > h5 {
@@ -192,7 +230,18 @@ footer > .four > h5 {
 
 footer > .five {
   text-align: center;
-  margin-top: -3.5em;
+  margin-top: -2em;
+}
+
+footer > .six {
+  color: black;
+  padding: 0em 0em 0em 1.5em;
+  text-align: center;
+  margin-top: -1.5em;
+}
+
+footer > .six > a {
+  color: black;
 }
 
 a:link { text-decoration: none; }
