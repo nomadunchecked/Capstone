@@ -28,7 +28,7 @@ export default () => html`
     </div>
 
     <div class="feedback-three">
-      <p>iBeta is our go-to partner for quality control. They consistently perform at high levels which enable us to deliver top quality digital experiences to our clients.</p>
+      <p>iTest is our go-to partner for quality control. They consistently perform at high levels which enable us to deliver top quality digital experiences to our clients.</p>
       <h4>Ratheo Digital</h4>
     </div>
   </div>
