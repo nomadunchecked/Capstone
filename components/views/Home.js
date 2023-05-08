@@ -6,6 +6,11 @@ export default (state) => html`
     <h1>SOFTWARE TESTING AND AUTOMATION</h1>
     <h2>Get your software tested here</h2>
   </section>
+
+  <h4 id="weather">
+    ${state.weather.city} weather: ${state.weather.description.toLowerCase()}, temperature: ${state.weather.temp}F (feels like ${state.weather.feelsLike}F)
+  </h4>
+
   <section class="about">
     <div>
       <!-- <h5>iTest SOFTWARE TESTING PLATFORMS</h5> -->

@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import html from "html-literal";
-import logoPic from "../assets/img/iTest.Logo4.png";
+import logoPic from "../assets/img/iTest.Logo5.png";
 
 export default () => html`
   <header class="header">
