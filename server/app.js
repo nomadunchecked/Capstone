@@ -1,18 +1,22 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-unused-vars */
-// 'Import' the Express module
+
+// Import the Express module
 const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+// Import the 'feedbacks' router file
+const feedbacks = require("./routers/feedbacks");
 
 // Initialize the Express application
 const app = express();
 
+// Used to secure Environmental variables
 dotenv.config();
 
 const PORT = process.env.PORT || 4040; // we use || to provide a default value
 
-// CONNECTING TO MONGODB THRU MONGOOSE
+// Connect to MongoDB database thru Mongoose Object Data Modeling (ODM) library
 mongoose.connect(process.env.MONGODB);
 
 const db = mongoose.connection;
@@ -20,13 +24,13 @@ const db = mongoose.connection;
 db.on("error", console.error.bind(console, "Connection Error:"));
 db.once("open", console.log.bind(console, "Successfully opened connection to Mongo!"));
 
-// LOGGING MIDDLEWEAR
+// Logging Middleware; can add to database for analytics
 const logging = (request, response, next) => {
   console.log(`${request.method} ${request.url} ${Date.now()}`);
   next();
 };
 
-// CORS Middleware
+// CORS Middleware; for security
 const cors = (req, res, next) => {
   res.setHeader("Access-Control-Allow-Headers", "X-Requested-With,content-type, Accept,Authorization,Origin");
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -46,6 +50,9 @@ app.get("/status", (request, response) => {
   // End and return the response
   response.send(JSON.stringify({ message: "Service healthy" }));
 });
+
+// When 'feedbacks.js' file is is hit, 'feedbacks' route executes
+app.use("/feedbacks", feedbacks);
 
 // Tell the Express app to start listening
 // Let the humans know I am running and listening on 4040

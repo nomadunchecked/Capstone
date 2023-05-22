@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-prototype-builtins */
+
 import { Header, Nav, Main, Footer } from "./components";
 import * as store from "./store";
 import Navigo from "navigo";
@@ -27,6 +28,32 @@ function afterRender(state) {
   document.querySelector(".fa-bars").addEventListener("click", () => {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   });
+
+  if (state.view === "Feedback") {
+    document.querySelector("form").addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const inputList = event.target.elements;
+      console.log("Input Element List", inputList);
+
+      const requestData = {
+        company: inputList.name.value,
+        text: inputList.questions.value
+      };
+      console.log("request Body", requestData);
+
+      axios
+        .post(`${process.env.TESTIMONIALS_API_URL}/feedbacks`, requestData)
+        .then((response) => {
+          // Push the new feedback onto the Testimonials state responses attribute, so it can be displayed in the testimonials list
+          store.Testimonials.responses.push(response.data);
+          router.navigate("/Testimonials");
+        })
+        .catch((error) => {
+          console.log("It puked", error);
+        });
+    });
+  }
 }
 
 router.hooks({
@@ -61,6 +88,22 @@ router.hooks({
           })
           .catch((err) => {
             console.log(err);
+            done();
+          });
+        break;
+
+      case "Testimonials":
+        // New Axios get request utilizing already made environment variable
+        axios
+          .get(`${process.env.TESTIMONIALS_API_URL}/feedbacks`)
+          .then((response) => {
+            // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.
+            console.log("response", response);
+            store.Testimonials.responses = response.data;
+            done();
+          })
+          .catch((error) => {
+            console.log("It puked", error);
             done();
           });
         break;

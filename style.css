@@ -7,7 +7,7 @@
   /* order: 3; */
   /* align-self: */
   /* flex-wrap: wrap;*/
-  /* flex-flow: column wrap; */ 
+  /* flex-flow: column wrap; */
 
   /* icon color: #9b0000 */
 
@@ -17,7 +17,7 @@
     grid-template-columns: 10% 10% 10% 10% 10%;
     grid-template-rows: 10% 10% 10% 10% 10%;
   }
-  
+
   #water {
   grid-column-start: 3;
   grid-column-end: 4;
@@ -63,9 +63,8 @@ margin-top: 1rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, minmax(auto, auto));
-  grid-gap: 1em;
+  grid-gap: 1.8em;
   margin: 1em 5em;
-  
 }
 
 #content-title-holder {
@@ -74,25 +73,26 @@ margin-top: 1rem;
 }
 #content-text-holder {
   font-size: 1.2em;
-  font-weight: 100;
+  font-weight: 400;
   padding: 0 0 0 0;
 }
-
-
-/* .testimonials {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, minmax(auto, auto));
-  grid-gap: 1em;
-  margin: 1em 5em;
-  
-} */
 
 #testimonials {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   margin: 1em 5em;
+}
+
+#response-company {
+  margin-bottom: 1.5rem;
+  margin-top: .5rem;
+  font-weight: 700;
+}
+
+#response-text {
+  font-size: 1.2em;
+  font-weight: 400;
 }
 
 #about {
@@ -102,6 +102,11 @@ margin-top: 1rem;
   margin: 1em 5em;
 }
 
+/* <h2>WHAT WE TEST</h2> */
+#platforms > h2 {
+  margin: -0.5em 0 0 0
+}
+
 #platforms {
   display: flex;
   flex-direction: column;
@@ -109,14 +114,17 @@ margin-top: 1rem;
 }
 
 #platforms > ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, minmax(auto, auto));
+  grid-gap: 1.8em;
   list-style-type: none;
   font-size: 1.2em;
-  margin: 0 0 1em -1.3em;
+  margin: 2em 0 1em -1.3em;
 }
 
-/* <h2>WHAT WE TEST</h2> */
-#platforms > h2 {
-  margin: -0.5em 0 0 0
+#platforms > ul > .seven {
+  grid-column: 2 / span 1;
 }
 
 .header {
@@ -134,9 +142,8 @@ nav {
 nav > ul > li {
   display: inline-block;
   padding: 0.5rem 0.5rem;
-  
-}
 
+}
 
   .about {
     display: flex;
@@ -156,7 +163,7 @@ content-text-holder
 }
 
 #jumbotron {
-  background: url(assets/img/Circuit.jpg);  
+  background: url(assets/img/Circuit.jpg);
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -180,28 +187,37 @@ form {
   border: solid 1px black;
   display: flex;
   flex-direction: column;
-  margin: 1rem 1rem;
+  margin: 1rem 5rem;
 }
 
 form > * {
-  margin: 0.5rem;
+  margin: 1em 5em;
 }
 
-form > input[type="submit"] {
-  width: 40%;
+#button {
+  align-self: center;
+  width: 10rem;
+  margin-bottom: 1.5rem;
+}
+
+/* form > input[type="submit"] {
+  width: 100%;
   margin: 0.5rem;
   margin-right: auto;
-}
+} */
 
 footer {
-  border-top: solid 1px black;
+  border: solid 1px black;
   padding: 2rem;
-  background-image: url(./assets/img/footerBackground1.png);
+  /* background-image: url(./assets/img/footerBackground1.png); */
+  background-color: #11b1a0;
   height: 10vh;
+  /* width: 100%; */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, minmax(auto, auto));
   color: black
+
 }
 
 footer > .four {
@@ -217,6 +233,7 @@ footer > .three {
   color: black;
   padding: 1em 0em 0em 2em;
   text-align: center;
+  font-weight: 600;
 
 }
 
@@ -238,6 +255,8 @@ footer > .six {
   padding: 0em 0em 0em 1.5em;
   text-align: center;
   margin-top: -1.5em;
+  /* font-size: 1.2em; */
+  font-weight: 600;
 }
 
 footer > .six > a {

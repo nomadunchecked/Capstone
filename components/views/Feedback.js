@@ -3,7 +3,7 @@ import html from "html-literal";
 
 export default () => html`
   <form id="form" method="POST" action="">
-    <section id="feedback">
+    <section>
       <h2>Contact Info</h2>
       <div class="info">
         <label for="name">Company Name:</label>
@@ -25,6 +25,6 @@ export default () => html`
         <textarea id="questions" name="questions" rows="5" cols="24" placeholder="Type feedback or request more info..."></textarea>
       </div>
     </section>
-    <button type="submit">Send</button>
+    <button id="button" type="submit">Send</button>
   </form>
 `;
