@@ -33,6 +33,8 @@
   grid-area: 1 / 1 / 3 / 6; <used for area>
 } */
 
+/* .material-icons */
+
 :root {
   scroll-behavior: smooth;
   /* font-family: 'Josefin Sans', sans-serif; */
@@ -102,29 +104,55 @@ margin-top: 1rem;
   margin: 1em 5em;
 }
 
-/* <h2>WHAT WE TEST</h2> */
-#platforms > h2 {
-  margin: -0.5em 0 0 0
-}
-
-#platforms {
+#platforms-title {
   display: flex;
   flex-direction: column;
+
+}
+
+#platforms-title > h5 {
   text-align: center;
 }
 
-#platforms > ul {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, minmax(auto, auto));
-  grid-gap: 1.8em;
-  list-style-type: none;
-  font-size: 1.2em;
-  margin: 2em 0 1em -1.3em;
+#platforms-title > h2 {
+  text-align: center;
+  margin: -0.5em 0 1em 0
 }
 
+#platforms {
+  display: grid;
+  grid-template-columns: 5% 25% 5% 25% 5% 25%;
+  grid-gap: 0.5em;
+
+}
+
+#content-icon-holder1 {
+grid-column: 1;
+}
+
+#content-platform-holder7{
+  grid-column: ;
+  }
+
+  /* #content-icon-holder7{
+    grid-column: 3;
+    } */
+
+
+
+/* #platforms > ul {
+  display: grid;
+  /* grid-template-columns: repeat(6, 1fr); */
+  /* grid-template-columns: 5% 25% 5% 25% 5% 25%;
+  grid-template-rows: repeat(3, minmax(auto, auto)); */
+  /* grid-gap: 1.8em; */
+  /* list-style-type: none;
+  font-size: 1.2em;
+  margin: 2em 0 1em -1.3em; */
+ /* */
+
 #platforms > ul > .seven {
-  grid-column: 2 / span 1;
+  grid-column: 4 / span 1;
 }
 
 .header {
@@ -200,11 +228,18 @@ form > * {
   margin-bottom: 1.5rem;
 }
 
-/* form > input[type="submit"] {
-  width: 100%;
-  margin: 0.5rem;
-  margin-right: auto;
-} */
+.advice {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin: 5rem 0 5rem 0;
+color: rgb(64, 163, 224)
+}
+
+.advice > #results {
+  margin-top: 2rem;
+  color: #9b0000;;
+  }
 
 footer {
   border: solid 1px black;
