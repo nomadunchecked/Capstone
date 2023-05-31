@@ -1,3 +1,6 @@
+/* eslint-disable no-inner-declarations */
+/* eslint-disable no-case-declarations */
+/* eslint-disable no-duplicate-case */
 /* eslint-disable no-unused-vars */
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-prototype-builtins */
@@ -9,6 +12,8 @@ import { capitalize } from "lodash";
 import axios from "axios";
 
 const router = new Navigo("/");
+const resultDiv = document.querySelector("#results");
+const resultBtn = document.querySelector("#getData");
 
 function render(state = store.Home) {
   document.querySelector("#root").innerHTML = `
@@ -24,11 +29,12 @@ function render(state = store.Home) {
 }
 
 function afterRender(state) {
-  // add menu toggle to bars icon in nav bar
+  // Add menu toggle to bars icon in nav bar
   document.querySelector(".fa-bars").addEventListener("click", () => {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   });
 
+  // Event listerner to submit the feedback form
   if (state.view === "Feedback") {
     document.querySelector("form").addEventListener("submit", (event) => {
       event.preventDefault();
@@ -54,6 +60,46 @@ function afterRender(state) {
         });
     });
   }
+  if (state.view === "Feedback") {
+    const resultDiv = document.querySelector("#results");
+    const resultBtn = document.querySelector("#getData");
+
+    resultBtn.addEventListener("click", () => {
+      getAdvice();
+    });
+
+    function getAdvice() {
+      axios
+        .get(`${process.env.RANDOMADVICE_API_URL}`)
+        .then((adviceData) => {
+          const Adviceobj = adviceData.data.slip;
+          resultDiv.innerHTML = `<h2>${Adviceobj.advice}</h2>`;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  }
+  if (state.view === "Services") {
+    const resultDiv = document.querySelector("#results");
+    const resultBtn = document.querySelector("#getData");
+
+    resultBtn.addEventListener("click", () => {
+      getAdvice();
+    });
+
+    function getAdvice() {
+      axios
+        .get(`${process.env.RANDOMADVICE_API_URL}`)
+        .then((adviceData) => {
+          const Adviceobj = adviceData.data.slip;
+          resultDiv.innerHTML = `<h2>${Adviceobj.advice}</h2>`;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  }
 }
 
 router.hooks({
@@ -67,6 +113,7 @@ router.hooks({
           .get(`https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=san%20diego`)
           .then((response) => {
             // Convert Kelvin to Fahrenheit since OpenWeatherMap does provide otherwise
+            // console.log(response);
             const kelvinToFahrenheit = (kelvinTemp) => Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
 
             // Create an object to be stored in the Home state from the response
@@ -79,11 +126,11 @@ router.hooks({
 
             // An alternate method would be to store the values independently
             /*
-      store.Home.weather.city = response.data.name;
-      store.Home.weather.temp = kelvinToFahrenheit(response.data.main.temp);
-      store.Home.weather.feelsLike = kelvinToFahrenheit(response.data.main.feels_like);
-      store.Home.weather.description = response.data.weather[0].main;
-      */
+        store.Home.weather.city = response.data.name;
+        store.Home.weather.temp = kelvinToFahrenheit(response.data.main.temp);
+        store.Home.weather.feelsLike = kelvinToFahrenheit(response.data.main.feels_like);
+        store.Home.weather.description = response.data.weather[0].main;
+        */
             done();
           })
           .catch((err) => {
@@ -91,6 +138,31 @@ router.hooks({
             done();
           });
         break;
+
+      // case "Feedback":
+      // const resultDiv = document.querySelector("#results");
+      // const resultBtn = document.querySelector("#getData");
+
+      // axios
+      //   .get(`${process.env.RANDOMADVICE_API_URL}`)
+      //   .then((adviceData) => {
+      //     const Adviceobj = adviceData.data.slip;
+      //     console.log(Adviceobj);
+
+      //     // Create an object to be stored in the Feedback state from the response
+      //     store.Feedback.advice = {
+      //       advice: adviceData.data.slip.advice
+      //     };
+
+      //     // resultDiv.innerHTML = `<p>${store.Feedback.advice}</p>`;
+
+      //     done();
+      //   })
+      //   .catch((error) => {
+      //     console.log(error);
+      //     done();
+      //   });
+      // break;
 
       case "Testimonials":
         // New Axios get request utilizing already made environment variable
@@ -107,6 +179,7 @@ router.hooks({
             done();
           });
         break;
+
       default:
         done();
     }

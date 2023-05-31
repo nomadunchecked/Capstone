@@ -11,7 +11,7 @@ const feedbacks = require("./routers/feedbacks");
 // Initialize the Express application
 const app = express();
 
-// Used to secure Environmental variables
+// Secure Environmental variables
 dotenv.config();
 
 const PORT = process.env.PORT || 4040; // we use || to provide a default value

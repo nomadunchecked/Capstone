@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 export default {
   header: "Services",
-  view: "Services",
+  view: "Services"
   // message: "Hello Roman",
 };

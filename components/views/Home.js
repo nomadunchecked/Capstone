@@ -1,5 +1,8 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable prettier/prettier */
 import html from "html-literal";
+import doneIcon from "../../assets/icons/check_FILL0_wght400_GRAD0_opsz48.png";
+import checkMark from "../../assets/img/checkMark.png";
 
 export default (state) => html`
   <section id="jumbotron">
@@ -7,6 +10,7 @@ export default (state) => html`
     <h2>Get your software tested here</h2>
   </section>
 
+  <!-- Weather API -->
   <h4 id="weather">
     ${state.weather.city} weather: ${state.weather.description.toLowerCase()}, temperature: ${state.weather.temp}F (feels like ${state.weather.feelsLike}F)
   </h4>
@@ -22,18 +26,55 @@ export default (state) => html`
       </p>
     </div>
     <hr />
-    <div id="platforms">
+
+    <div id="platforms-title">
       <h5>iTest SOFTWARE TESTING PLATFORMS</h5>
       <h2>WHAT WE TEST</h2>
-      <ul>
-        <li class="one">Websites</li>
-        <li class="two">Desktop Apps</li>
-        <li class="three">Eenterprose/Client-Server</li>
-        <li class="four">Web Apps</li>
-        <li class="five">eCommerce</li>
-        <li class="six">APIs/Web Services</li>
-        <li class="seven">Mobile Applications</li>
-      </ul>
     </div>
+
+    <section id="platforms">
+      <!-- <div class="platform"> -->
+      <p id="content-icon-holder1"><img src="${checkMark}" id="one" alt="checkMark" /></p>
+      <p id="content-platform-holder1">
+        Websites
+      </p>
+      <!-- </div> -->
+      <!-- <div class="platform"> -->
+      <p id="content-icon-holder2"><img src="${checkMark}" id="one" alt="checkMark" /></p>
+      <p id="content-platform-holder2">
+        Desktop Apps
+      </p>
+      <!-- </div> -->
+      <!-- <div class="platform"> -->
+      <p id="content-icon-holder3"><img src="${checkMark}" id="one" alt="checkMark" /></p>
+      <p id="content-platform-holder3">
+        Eenterprise/Client-Server
+      </p>
+      <!-- </div> -->
+      <!-- <div class="platform"> -->
+      <p id="content-icon-holder4"><img src="${checkMark}" id="one" alt="checkMark" /></p>
+      <p id="content-platform-holder4">
+        Web Apps
+      </p>
+      <!-- </div> -->
+      <!-- <div class="platform"> -->
+      <p id="content-icon-holder5"><img src="${checkMark}" id="one" alt="checkMark" /></p>
+      <p id="content-platform-holder5">
+        eCommerce
+      </p>
+      <!-- </div> -->
+      <!-- <div class="platform"> -->
+      <p id="content-icon-holder6"><img src="${checkMark}" id="one" alt="checkMark" /></p>
+      <p id="content-platform-holder6">
+        APIs/Web Services
+      </p>
+      <!-- </div> -->
+      <!-- <div class="platform"> -->
+      <p id="content-icon-holder7"><img src="${checkMark}" id="one" alt="checkMark" /></p>
+      <p id="content-platform-holder7">
+        Mobile Applications
+      </p>
+      <!-- </div> -->
+    </section>
   </div>
 `;

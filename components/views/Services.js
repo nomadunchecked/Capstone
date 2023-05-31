@@ -15,7 +15,6 @@ export default () => html`
 
   <div id="services">
     <div class="one">
-      
       <p id="content-title-holder">Web Testing</p>
       <p id="content-text-holder">
         iTest offers website testing services and will systematically test every aspect of your website's technology including applications, client-server systems, eCommerce platforms and more.
