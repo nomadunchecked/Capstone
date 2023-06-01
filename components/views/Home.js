@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable prettier/prettier */
 import html from "html-literal";
-import doneIcon from "../../assets/icons/check_FILL0_wght400_GRAD0_opsz48.png";
 import checkMark from "../../assets/img/checkMark.png";
+import sectionLine from "../../assets/img/lineHorizontal.png";
 
 export default (state) => html`
   <section id="jumbotron">
@@ -19,6 +19,8 @@ export default (state) => html`
     <h1>WHO WE ARE</h1>
   </section>
 
+  <div class="section-border"><img src=${sectionLine} /></div>
+
   <div id="about">
     <div class="one">
       <p id="content-text-holder">
@@ -27,10 +29,14 @@ export default (state) => html`
     </div>
     <hr />
 
+    <div class="section-border"></div>
+
     <div id="platforms-title">
       <h5>iTest SOFTWARE TESTING PLATFORMS</h5>
       <h2>WHAT WE TEST</h2>
     </div>
+
+    <div class="section-border"><img src=${sectionLine} /></div>
 
     <section id="platforms">
       <!-- <div class="platform"> -->

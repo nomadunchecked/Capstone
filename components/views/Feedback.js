@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable prettier/prettier */
 import html from "html-literal";
+import sectionLine from "../../assets/img/lineHorizontal.png";
 
 export default (state) => html`
   <form id="form" method="POST" action="">
@@ -26,11 +27,15 @@ export default (state) => html`
     <button id="button" type="submit">Send</button>
   </form>
 
+  <div class="section-border"><img src=${sectionLine} /></div>
+
   <!-- Advice API -->
   <div class="advice">
     <h2>Would you like a Fun Random Advice?</h2>
     <button class="btn" id="getData">Get my Fun Advice</button>
 
     <div id="results"></div>
+
+    <!-- <div class="section-border"><img src=${sectionLine} /></div> -->
   </div>
 `;
