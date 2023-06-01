@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 
 import html from "html-literal";
+import sectionLine from "../../assets/img/lineHorizontal.png";
 
 export default (state) => html`
   <section id="jumbotron">
@@ -12,6 +13,8 @@ export default (state) => html`
   <section class="section-title_main_title">
     <h1>WHAT PEOPLE SAY</h1>
   </section>
+
+  <div class="section-border"><img src=${sectionLine} /></div>
 
   <!-- Display 'feedbacks' on the Testimonials page -->
   <section id="testimonials">

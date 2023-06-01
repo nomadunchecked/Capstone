@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-unused-vars */
 import html from "html-literal";
-// import logoPic from "/assets/img/iTest.Logo4.png";
+import sectionLine from "../../assets/img/lineHorizontal.png";
 
 export default () => html`
   <section id="jumbotron">
@@ -12,6 +12,8 @@ export default () => html`
   <section class="section-title_main_title">
     <h1>WHAT WE DO</h1>
   </section>
+
+  <div class="section-border"><img src=${sectionLine}></div>
 
   <div id="services">
     <div class="one">
