@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable prettier/prettier */
-import html from "html-literal";
-import checkMark from "../../assets/img/checkMark.png";
-import sectionLine from "../../assets/img/lineHorizontal.png";
+import html from 'html-literal';
+import checkMark from '../../assets/img/checkMark.png';
+import sectionLine from '../../assets/img/lineHorizontal.png';
 
-export default (state) => html`
+export default state => html`
   <section id="jumbotron">
     <h1>SOFTWARE TESTING AND AUTOMATION</h1>
     <h2>Get your software tested here</h2>

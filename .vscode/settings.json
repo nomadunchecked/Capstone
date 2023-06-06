@@ -19,5 +19,15 @@
   "workbench.enableExperiments": false,
   "workbench.iconTheme": "vs-seti",
   "workbench.view.alwaysShowHeaderActions": true,
-  "editor.rulers": [100, 120]
+  "editor.rulers": [
+    100,
+    120
+  ],
+  "cSpell.words": [
+    "Adviceobj",
+    "Eenterprise",
+    "PURPUSES",
+    "RANDOMADVICE",
+    "servieces"
+  ]
 }

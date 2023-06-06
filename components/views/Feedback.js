@@ -1,12 +1,12 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable prettier/prettier */
-import html from "html-literal";
-import sectionLine from "../../assets/img/lineHorizontal.png";
+import html from 'html-literal';
+import sectionLine from '../../assets/img/lineHorizontal.png';
 
-export default (state) => html`
+export default state => html`
   <form id="form" method="POST" action="">
     <section>
-      <h2>How did you like our servieces?</h2>
+      <h2>How did you like our services?</h2>
       <div class="info">
         <label for="name">Company Name:</label>
         <input type="text" name="name" id="name" required />
